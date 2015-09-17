@@ -1,0 +1,39 @@
+---------------------------------------------------
+#Start Derby 
+$ startNetworkServer
+
+
+#open another tab and run Derby tool through 'ij'
+$ ij
+
+#create/connect database
+
+$ connect 'jdbc:derby:firstdb;create=true';
+$ show tables;
+
+#exit from derby
+$ exit;
+
+#stop Derby server
+$ stopNetworkServer
+
+---------------------------------------------------
+#start glass fish server
+$ asadmin start-domain
+#stop glass fish server
+$ asadmin stop-domain
+
+---------------------------------------------------
+
+# Running maven application from cli (following are sample command )
+
+# go to project folder on command line 
+developer2@developer2:~/java/rental $ ls
+derby.log  pom.xml  src  target
+
+#type following command where "com.mycompany.rental" is package and Main is class name
+developer2@developer2:~/java/rental $ mvn exec:java -Dexec.mainClass="com.mycompany.rental.Main"
+
+
+
+###
